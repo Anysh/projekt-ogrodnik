@@ -12,7 +12,7 @@ if(isset($_POST["add_to_cart"]))
            if(!in_array($_GET["id"], $item_array_id))
            {
                $count = count($_SESSION["shopping_cart"]);
-               //przechowuje dane z pól id hidden_name hidden_price quantity w zmiennej item_array
+               
                $item_array = array(
                 'item_id'         => $_GET["id"],
                 'item_name'       => $_POST["hidden_name"],
@@ -103,11 +103,11 @@ if(isset($_GET["action"]))
 echo "your email is " . $_SESSION['email'] . "<br>";
 
 
-//wybiera wszystko z tabeli tbl_product rosnąco po id
+
 $query = "SELECT * FROM tbl_product ORDER BY id ASC";
-//wykonuje komendę i przechowuje ją w zmiennej result
+
 $result = mysqli_query($connect, $query);
-//sprawdza czy liczba linijek w wykonanej komendzie jest większa niż 0
+
 if(mysqli_num_rows($result) > 0)
 {   
     while($row = mysqli_fetch_array($result))
